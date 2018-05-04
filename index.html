@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <script type="text/javascript">
+
+    var isLecheng = /Lecheng/.test(navigator.userAgent),//是否APP内打开
+      hasCode = /code/.test(location.href),
+      version = 1,//最新版本
+      expire = parseFloat(document.cookie.replace(/(?:(?:^|.*;\s*)lastVersion\s*\=\s*([^;]*).*$)|^.*$/, "$1")) < version,//是否旧版
+      noAuth = document.cookie.replace(/(?:(?:^|.*;\s*)openid\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '',//是否授权
+      updateOpenid=expire || noAuth;
+
+    if (!isLecheng && updateOpenid && !hasCode) {
+
+      var curHost='';
+      switch(location.host){
+        case "192.168.21.209:8080":curHost='0';break;
+        case "localhost:8080":curHost='0';break;
+        case "ceshi.lechengclub.com":curHost='1';break;
+        case "www.lechengclub.com":curHost='2';break;
+      }
+
+      var state = location.hash.split('#')[1].replace(/\?/g, 'X0').replace(/\=/g, 'X1').replace(/&/g, 'X2').replace(/\//g,'X3'),
+        redirect_uri = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx65478e169956c988&redirect_uri=' + encodeURIComponent('https://www.lechengclub.com/wap/redirect.html') +
+          '&response_type=code&scope=snsapi_userinfo&state=' + (curHost+state) + '#wechat_redirect';
+
+      location.replace(redirect_uri);
+    }
+
+    var _czc = _czc || [];
+    _czc.push(["_setAutoPageview",false]);
+
+  </script>
+  <script type="text/javascript" src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1261335326'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261335326' type='text/javascript'%3E%3C/script%3E"));</script>
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=Znq1u2zyPT8ChoO1DWwP945g"></script>
+  <script type='text/javascript' src='https://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script>
+  <script type='text/javascript' src='https://passport.cnblogs.com/scripts/jsencrypt.min.js'></script>
+  <title></title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <div id="baiduMap" style="display:none;"></div>
+</body>
+
+</html>

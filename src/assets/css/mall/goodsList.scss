@@ -1,0 +1,46 @@
+@import "../var.scss";
+.goodsList {
+    .lc-search{
+      .input{width:2.9rem;}
+      .switch{width:.15rem;height:.15rem;margin-left:.15rem;background: url('~assets/img/mall/icon_search_list_smallpic.png') no-repeat center;background-size:100%;
+        &.car{background-image:url('~assets/img/mall/icon_search_list_largepic_car.png');}
+      }
+    }
+
+    .newCarSep{
+        text-align: center;color:$black;height:.5rem;line-height:.5rem;position:relative;
+        h1{position:absolute;top:0;left:50%;margin-left:-.36rem;width:.72rem;z-index:2;background: #f2f2f2;}
+        span{display:inline-block;height:0;border-top:1px solid #c9c9c9;width:2.06rem;vertical-align: middle;}
+    }
+
+    .filter{background: #fff;height:100%;padding:0 .2rem;border-top:$border;
+      h1{margin:.2rem 0;}
+
+      .priceIn{height: .4rem;text-align:center;
+        input{width:44%;height:100%;border:$border;border-radius: 5px;float: left;text-align:center;box-sizing: border-box;}
+        input:nth-of-type(2){float:right;}
+        span{line-height: .4rem;}
+      }
+
+      .brands{
+          span{display:inline-block;font-size:$h3;line-height:.3rem;margin:0 .1rem .1rem 0;border:1px solid hsla(0,0%,93%,.6);padding:0 .08rem;border-radius:4px;}
+          span.on{border-color:$mainColor;color:$mainColor;}
+      }
+    }
+
+    .brandList{
+        div{line-height:.3rem;
+          img{width:.3rem;height:.3rem;vertical-align:middle;margin-right:.1rem;}
+          span{color:red;border:1px solid red;border-radius: 3px;margin-left:.1rem;font-size:$h3;padding: 0 .06rem;}
+        }
+    }       
+    #series li:nth-of-type(1){padding: .07rem .14rem;background: #fafafa;} 
+    .brandList,#series{
+      li.on div{background: url('~assets/img/mall/icon_list_detail_select.png') no-repeat right center;background-size:17px 12px;}
+    }
+
+    .btns{height: .5rem;@include box;border-top:$border;
+        button{height: 100%;@include flex;}
+        button:nth-of-type(2){background: $mainColor;color:#fff;}
+      }
+}

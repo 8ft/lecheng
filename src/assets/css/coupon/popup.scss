@@ -1,0 +1,61 @@
+@import "../var.scss";
+.coupon-popup{
+
+    .switch {background: #fff;height:.44rem;line-height: .44rem;padding:0 .2rem;border-bottom:$border;overflow: hidden;zoom: 1;
+        h1{color:$black;display: inline-block;
+            &.has-icon::before{content: '';display: inline-block;margin-right:.05rem;width:.2rem;height:.13rem;background: url('~assets/img/mall/icon_detail_list_coupon.png') no-repeat center;background-size:100%;}
+        }
+        div{float:right;color:$gray;margin-right:.1rem;}
+        p{color:$gray;font-size:$h3;position: relative;
+            span{position:absolute;left:.75rem;top:0;}
+        }
+    }
+    
+    .coupons{background:#fff;
+        h1{line-height: .5rem;text-align: center;border-bottom:$border;font-size:.16rem;color:$black;}
+
+        .page-content{height:3rem;padding:.15rem .2rem 0;
+
+            .li{color:#fff;width:3.4rem;margin-bottom:.15rem;background:#fff;border-radius:8px;
+
+                .top{height: .65rem;background: url('~assets/img/mall/background_card_top.png') no-repeat top center;background-size:100%;position: relative;display:flex;
+
+                    .title{line-height: .65rem;text-indent: .15rem;font-size:.15rem;width: 70%;@include txtOverflow;}
+                    .money{font-size: .3rem;line-height:.3rem;font-weight:500;flex:1;text-align: center;display:flex;flex-direction: column;justify-content: center;margin-right:.15rem;text-align:right;
+                        div{font-size: .27rem;font-weight:600;position: relative;top:.06rem;
+                            span{font-size: .17rem}
+                        }
+                        span{font-size: .12rem;position: relative;top: -.02rem; white-space: nowrap;}
+                    }
+                }
+
+                .bottom{border:$border;border-top:none;border-radius:0 0 8px 8px;padding:.1rem .15rem ;position: relative;box-sizing:border-box;min-height: .48rem;
+                    .time{line-height: .24rem;margin-bottom: .07rem;}
+                    .desc{line-height: .18rem;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;span{flex: 1;min-width: 1px;overflow: hidden;text-overflow: ellipsis;}}
+                    
+                    p{font-size:$h3;color:$gray;display: flex;align-items: center;}
+                    p::before{content: '';display: inline-block;margin-right:.07rem;width:.12rem;height:.12rem;background: url('~assets/img/mall/icon_card_detail_time.png') no-repeat center;background-size:100%;vertical-align: text-top;margin-top: -.02rem}
+                    .desc::before{background-image:url('~assets/img/mall/icon_card_detail_notice.png');align-self: flex-start;margin-top: .02rem}
+                    
+                    img{width:.57rem;position: absolute;right:.2rem;top:.05rem;bottom:0}
+                    button{font-size:$h3;padding:0 .1rem;height: .22rem;border-radius: 99px;color:#44aae5;border:1px solid #44aae5;position: absolute;right:.15rem;top:.1rem;}
+
+                    .item-radio{display: block;position:absolute;width:.48rem;height:100%;right:0;bottom:0;background: url('~assets/img/icon_list_select.png') no-repeat center;background-size:.2rem .2rem;
+                        &.on{background-image:url('~assets/img/icon_list_select_pressed.png'); }}
+                }
+
+                &.dis .top{background-image: url('~assets/img/mall/background_card_top_over.png');}
+            }
+
+            .sep{text-align: center;height:.3rem;position:relative;margin-bottom:.1rem;
+                h1{position:absolute;top:0;left:50%;margin-left:-.51rem;width:1.02rem;z-index:2;background: #f2f2f2;font-size:$h3;line-height:.3rem;color:$gray;}
+                span{display:inline-block;height:0;border-top:1px solid #c9c9c9;width:2.06rem;vertical-align: bottom;}
+            }
+        }
+
+        .none{display: block;position: relative;height:.4rem;width:100%;border-top:$border;
+            &::before{content:'';display: inline-block;width:.2rem;height:.2rem;background: url('~assets/img/icon_list_select.png') no-repeat center;background-size:.2rem .2rem;vertical-align: top;margin-right:.1rem;}
+            &.on::before{background-image:url('~assets/img/icon_list_select_pressed.png');}
+        }
+    }
+}

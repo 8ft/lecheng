@@ -1,0 +1,32 @@
+$border:1px solid hsla(0,0%,93%,.8);
+$mainColor:#ea6000;
+$black:#22222d;
+$lightBlack:#55555d;
+$gray:#88888d;
+$lightGray:#c9c9c9;
+$red:#e94816;
+$orange:#f29600;
+$bg:#f2f2f2;
+
+$h1:.18rem;
+$h2:.15rem;
+$h3:.12rem;
+$h4:.1rem;
+
+$topFloor:203;
+$middleFloor:202;
+$bottomFloor:201;
+
+@mixin bold{font-size:$h2;color:$black;}
+
+@mixin box{display:flex;flex-wrap:wrap;}
+@mixin flex($value:1){display:block;flex:$value;}
+@mixin flexDir($value:row){flex-direction:$value;}//row-reverse,column,column-reverse
+
+@mixin transColor_t2b($ctop,$cbtm){background:linear-gradient(to bottom,  $ctop 0%,$cbtm 100%);}
+
+@mixin txtOverflow{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+
+
+
